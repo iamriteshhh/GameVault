@@ -1,0 +1,10 @@
+{
+  "appId": "com.gamevault.app",
+  "appName": "Game Vault",
+  "webDir": "dist",
+  "plugins": {
+    "CapacitorHttp": {
+      "enabled": true
+    }
+  }
+}

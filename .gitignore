@@ -1,0 +1,45 @@
+# Dependency directories
+node_modules/
+
+# Vite build outputs
+dist/
+dist-ssr/
+
+# Electron build outputs
+dist-electron/
+release/
+out/
+build/
+
+# IDE / System files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.eslintcache
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# Local configs & keys
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Databases / backups (if created locally during testing)
+gamevault_data.json
+*.json.bak
+
+# Compiled Windows installers (prevents large files from breaking Git pushes)
+*.exe

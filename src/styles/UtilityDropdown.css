@@ -1,0 +1,100 @@
+.utility-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 240px;
+  background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(20, 22, 33, 0.98) 100%);
+  border: 1px solid var(--bg-card);
+  border-top: 2px solid var(--accent-amber);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 159, 28, 0.05);
+  z-index: 1000;
+  padding: 12px 0;
+  animation: dropdownFadeIn 0.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+@keyframes dropdownFadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-header {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-amber);
+  padding: 0 16px 8px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  text-transform: uppercase;
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  padding-top: 6px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition);
+  color: var(--text-secondary);
+}
+
+.dropdown-item:hover:not(.disabled) {
+  background-color: rgba(255, 159, 28, 0.05);
+  color: var(--accent-amber);
+}
+
+.dropdown-item .icon {
+  font-size: 0.95rem;
+}
+
+.dropdown-item .label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px dashed var(--bg-card);
+  margin: 10px 0;
+}
+
+.dropdown-subheader {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  padding: 0 16px 4px 16px;
+  text-transform: uppercase;
+}
+
+.dropdown-item.disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.dropdown-item.disabled .label {
+  color: var(--text-dim);
+}
+
+.dropdown-item.disabled .badge {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-dim);
+  padding: 2px 6px;
+  border-radius: 2px;
+  margin-left: auto;
+  letter-spacing: 0.05em;
+}
