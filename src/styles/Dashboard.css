@@ -559,11 +559,19 @@
 }
 
 @media (max-width: 600px) {
+  /* ─── Root dashboard: prevent any horizontal overflow ─── */
+  .dashboard {
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+  }
+
   /* Stats: 2 wide columns, tighter padding */
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
     margin-bottom: 16px;
+    max-width: 100%;
   }
   .stat-card { padding: 14px 12px; }
   .stat-value { font-size: 1.5rem; }
@@ -574,6 +582,7 @@
     height: 240px;
     margin-bottom: 16px;
     perspective: 600px;
+    max-width: 100%;
   }
   .carousel-deck {
     width: 110px;
@@ -608,8 +617,13 @@
     grid-template-columns: 1fr;
     gap: 10px;
     margin-bottom: 16px;
+    max-width: 100%;
   }
-  .dash-section { padding: 14px 12px; }
+  .dash-section {
+    padding: 14px 12px;
+    overflow: hidden;
+    max-width: 100%;
+  }
   .dash-section-title { font-size: 0.7rem; margin-bottom: 12px; }
 
   /* Section header: stack vertically */
@@ -626,20 +640,54 @@
   .mini-game-title { font-size: 0.78rem; }
   .mini-rating { font-size: 0.7rem; padding: 2px 4px; }
 
-  /* Genre bars: smaller label */
-  .genre-bar-label { width: 68px; font-size: 0.68rem; }
-  .genre-bar-row { gap: 8px; font-size: 0.72rem; }
+  /* Genre bars: constrain to parent, smaller label */
+  .genre-chart {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .genre-bar-label { width: 60px; font-size: 0.65rem; }
+  .genre-bar-row { gap: 6px; font-size: 0.72rem; }
+  .genre-bar-count { width: 20px; font-size: 0.7rem; }
 
-  /* Status grid: 2 columns but smaller padding */
-  .status-mini-card { padding: 8px 10px; gap: 6px; }
-  .status-mini-label { font-size: 0.68rem; }
-  .status-mini-count { font-size: 0.75rem; }
+  /* Status grid: 2 columns, prevent overflow */
+  .status-grid {
+    max-width: 100%;
+  }
+  .status-mini-card {
+    padding: 8px 8px;
+    gap: 5px;
+    min-width: 0;
+    overflow: hidden;
+  }
+  .status-mini-label {
+    font-size: 0.62rem;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .status-mini-count {
+    font-size: 0.72rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
 
-  /* Activity feed */
-  .activity-item { padding: 10px 12px; gap: 8px; }
-  .activity-title { font-size: 0.75rem; }
-  .activity-date { font-size: 0.65rem; }
-  .activity-badge { font-size: 0.6rem; }
+  /* Activity feed: prevent overflow */
+  .activity-feed {
+    max-width: 100%;
+  }
+  .activity-item {
+    padding: 10px 10px;
+    gap: 6px;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .activity-title {
+    font-size: 0.72rem;
+    min-width: 0;
+  }
+  .activity-date { font-size: 0.6rem; }
+  .activity-badge { font-size: 0.55rem; padding: 2px 4px; }
 }
 
 /* Smooth Text Blur-Reveal Animation */
